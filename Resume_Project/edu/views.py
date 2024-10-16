@@ -26,7 +26,8 @@ def submit_form(request):
                 email_subject,
                 email_message,
                 settings.EMAIL_HOST_USER,  
-                ["harshadchavan92@gmail.com"],
+                ["harshadchavan92@gmail.com","rawoolomkar861@gmail.com" ],
+               
                 fail_silently=False,
                 )
             messages.success(request, "The message has been sent successfully!") 
