@@ -1,0 +1,126 @@
+{% extends "core/base.html" %}
+{% block title%} 
+<title>Contact Us</title>
+{% endblock title%} 
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif; /* Use Roboto font */
+        background-color: #f8f9fa; /* Light background color */
+    }
+    .contact-card {
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    .contact-card:hover {
+        transform: translateY(-5px); /* Slight lift effect on hover */
+    }
+    .form-control {
+        border: 1px solid #ffc107; /* Custom border color */
+        transition: border-color 0.3s;
+    }
+    .form-control:focus {
+        border-color: #ffca2b; /* Brighter border on focus */
+        box-shadow: 0 0 5px rgba(255, 202, 43, 0.5); /* Glow effect */
+    }
+    .btn-warning {
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .btn-warning:hover {
+        background-color: #ffca2b; /* Lighter background on hover */
+        transform: scale(1.05); /* Slightly enlarge button on hover */
+    }
+    .text-warning {
+        color: #ffc107; /* Custom yellow color */
+    }
+    hr {
+        border: 1px solid #ffc107; /* Yellow line */
+        margin-top: 30px;
+    } 
+
+    /* Keyframes for fadeout animation */
+    @keyframes fadeout {
+        0% {
+            opacity: 1; /* Fully visible */
+        }
+        100% {
+            opacity: 0; /* Fully transparent */
+            transform: translateY(-20px);  /* Optional: slight upward movement */
+        }
+    }
+
+    .alert {
+        animation: fadeout 5s ease-in-out 2s forwards;
+    }
+    
+</style>
+
+<div class=" container mt-5">
+    <h1 class="text-center text-warning mb-4">Contact Us</h1> <!-- Page Title --> 
+    {% if messages %}
+    <div class="alert alert-dismissible fade show mt-3" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1050; width: auto;">
+        {% for message in messages %}
+            <di>{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card contact-card shadow-lg border-0 mb-4">
+                <div class="card-body">
+                    <form method="POST" action="submit-form/"> 
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label text-warning">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-warning">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Your Email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label text-warning">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label text-warning">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" name = "message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Yellow horizontal line --> 
+    <footer class="bg-dark text-white text-center py-4 mt-1">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <h5 class="text-warning mb-0 me-2">Contact Us</h5>
+                <p class="mb-0 me-2">Phone: <a href="tel:+91 7666114184" class="text-warning">+91 7666114184</a></p> <br>
+                <p class="mb-0 me-2">Email: <a href="mailto:youremail@example.com" class="text-warning">harshadchavan92@gmail.com</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/HarshadCh" target="_blank" class="text-warning mx-2">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/chavan1830/" target="_blank" class="text-warning mx-2">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="mailto:harshadchavan92@gmail.com" class="text-warning mx-2">
+                    <i class="fas fa-envelope fa-2x"></i> <!-- Font Awesome icon for Email -->
+                </a>
+
+            </div>
+        </div>
+    </footer>
+    
+       
+</div>
+{% endblock %}

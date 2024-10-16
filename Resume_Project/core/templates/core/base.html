@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    {% block title %}
+    
+    {% endblock title %}
+    {% load static %}
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <!-- AOS CSS for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Add Font Awesome CDN link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/all.css' %}"> 
+    <link rel="icon" type="image/x-icon" href="{% static 'core/images/favicon.ico' %}">
+    {% block corecss %}
+     <link rel="stylesheet" href="{% static 'core/css/core.css' %}"> 
+    {% endblock corecss %}
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-sm-2" style="background-color: #343a40;"> <!-- Sidebar background color -->
+                {% include "core/sidebar.html" %}
+            </div>
+            <div class="col-sm-10 text-white">
+                {% block content %} 
+
+                {% endblock content %}
+    
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+    <script src="{% static 'core/js/all.js' %}"></script> 
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    AOS.init();  // Initialize AOS animations
+    </script>
+</body>
+
+</html>

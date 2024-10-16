@@ -1,0 +1,50 @@
+{% load static %}  <!-- Correctly load static files -->
+<div style="border-right: 3px solid red; height: 100vh; padding: 20px; background-color: #212529; transition: background-color 0.3s; position: relative;"> <!-- Adjusted background -->
+    <div class="text-center">
+        <img src="{% static 'core/images/Harshad.jpg' %}" alt="Profilepic" class="img-fluid rounded-circle shadow" style="width: 120px; height: 120px; border: 4px solid #ffc107;"> <!-- Increased size and added border -->
+    </div>
+    <h5 class="text-center text-warning mt-3">Harshad Vinod Chavan</h5> <!-- Changed text color -->
+    <hr class="border-light">
+    <nav class="nav flex-column text-center">
+        <a href= {% url "Home" %} class="nav-link text-light mb-2 animated-link">Home</a>
+        <a href= {% url "contact" %} class="nav-link text-light mb-2 animated-link">Contact</a>
+        <a href= {% url "service" %} class="nav-link text-light mb-2 animated-link">My experience</a>
+        <a href= {% url "skill" %} class="nav-link text-light mb-2 animated-link">Skill</a>
+    </nav>
+</div>
+
+<style>
+    /* Add styles for sidebar links and hover effects */
+    .nav-link {
+        font-size: 1.1rem;  /* Slightly increase font size */
+        position: relative;  /* For hover effect */
+        transition: color 0.3s;  /* Smooth color transition */
+    }
+
+    .nav-link::after {
+        content: ''; /* Add an underline effect */
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffc107; /* Gold color */
+        transition: width 0.3s; /* Smooth width transition */
+        margin: auto;
+    }
+
+    .nav-link:hover {
+        color: #ffc107; /* Change text color on hover */
+    }
+
+    .nav-link:hover::after {
+        width: 100%; /* Expand underline on hover */
+    }
+
+    .shadow {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow to image */
+    }
+
+    /* Optional: Add a transition effect to the sidebar */
+    div {
+        transition: all 0.3s; /* Smooth transition for background color and border */
+    }
+</style>

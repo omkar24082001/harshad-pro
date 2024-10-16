@@ -1,0 +1,62 @@
+{% extends "core/base.html" %}
+{% load static %} 
+
+{% block title%} 
+<title>Harshad Vinod Chavan</title>
+{% endblock title%} 
+{% block content %}
+<div class="container-fluid">  <!-- Use container-fluid for full width -->
+    <div class="card text-center bg-dark text-white shadow-lg">  <!-- Card for layout -->
+        <div class="card-body" style="padding: 20px;"> <!-- Set padding for the card body -->
+            <div class="glow-border mb-4" style="display: inline-block; border-radius: 50%; padding: 5px;">  <!-- Glowing border -->
+                <img src="{% static 'core/images/Harshad.jpg' %}" alt="Profile photo" class="img-fluid rounded-circle" style="width: 250px; height: 250px;">  <!-- Increased size -->
+            </div>
+            <p class="card-text text-light mb-2" style="font-size: 1.5rem; font-weight: 500; line-height: 1.5;">
+                Hello, I'm <span class="text-warning">Harshad Vinod Chavan</span>! Welcome to my profile. 
+                <br>
+                <small class="text-muted">Explore my journey and projects below.</small>
+            </p>
+            <hr class="my-4 border-light"> <!-- Divider -->
+            <h6 class="card-subtitle mb-2 text-warning">About Me</h6> <!-- Subtitle -->
+            
+            <!-- Updated paragraphs with new font and styles -->
+            <p class="text-light mb-2" style="line-height: 1.8; text-align: justify; font-family: 'Roboto', sans-serif;"> <!-- Justify text -->
+                Hello! I'm Harshad, a dedicated software engineer with one year of experience in Django, specializing in backend development. My journey in software development has been driven by a passion for solving complex problems and delivering efficient solutions. 
+            </p>
+            <p class="text-light mb-2" style="line-height: 1.8; text-align: justify; font-family: 'Roboto', sans-serif;"> <!-- Justify text -->
+                Over the past year, I have honed my skills in creating robust applications that ensure seamless data management and retrieval. In my recent projects, I've focused on developing APIs for an inventory management system, incorporating technologies such as PostgreSQL and Redis for enhanced performance.
+            </p>
+            <p class="text-light mb-2" style="line-height: 1.8; text-align: justify; font-family: 'Roboto', sans-serif;"> <!-- Justify text -->
+                My understanding of Django's Object-Relational Mapping (ORM) allows me to effectively design and implement complex database queries, while my knowledge of REST principles ensures that my APIs are intuitive and user-friendly. I thrive on challenges and am continually seeking to expand my expertise, particularly in Django's various functionalities, including request methods and signals.
+            </p>
+            
+            <!-- Buttons Section -->
+            <div class="mt-0"> <!-- Margin top for spacing -->
+                <a href="/media/pdf/Harshad_Vinod_Chavan_EXP.pdf" class="btn btn-warning me-2">Download Resume</a>
+                <a href= {% url "contact" %} class="btn btn-info">Contact</a>  <!-- Contact Button --> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Fonts Link -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+    /* Custom CSS for glowing effect */
+    .glow-border {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Adjust glow color and intensity */
+    }
+
+    .glow-border img {
+        transition: transform 0.3s; /* Add transition for a slight scale effect */
+    }
+
+    .glow-border:hover img {
+        transform: scale(1.05); /* Scale image on hover for effect */
+    }
+</style>
+
+{% endblock content %}

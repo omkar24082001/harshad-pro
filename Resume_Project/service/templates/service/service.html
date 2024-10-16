@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+
+{% block title%} 
+<title>Experience</title>
+{% endblock title%} 
+
+{% block content %}
+<div class="container mt-3" style="font-family: 'Poppins', sans-serif;">
+    <h1 class="text-center text-warning mb-4" data-aos="fade-down" data-aos-duration="800">My Experience</h1> <!-- Page title with animation -->
+
+    <!-- First Row: Experience 1 -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="card mb-4 shadow-lg border-0" data-aos="zoom-in" data-aos-duration="800">
+                <div class="card-body text-center">
+                    <div class="icon mb-3">
+                        <i class="fas fa-briefcase fa-3x text-warning"></i> <!-- Add Font Awesome icon for job -->
+                    </div>
+                    <h5 class="card-title text-warning">Software Engineer Trainee</h5> <!-- Position -->
+                    <p class="card-text text-muted" style="text-align: justify;">
+                        Company: Novac Solutions <br> <!-- Company -->
+                        Duration: Jun 2024 - Sep 2024<br><!-- Dates -->
+                        • Implemented data cleaning and validation processes to ensure accuracy and consistency across databases. Developed automated scripts in Python to streamline data processing and reporting tasks, reducing manual effort and improving efficiency.
+                        <br>
+                        • Developed and optimized complex SQL queries to enhance data retrieval performance and efficiency.
+                        Assisted in designing and implementing database schemas and table structures to support robust business applications.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row: Experience 2 -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mb-4 shadow-lg border-0" data-aos="fade-up" data-aos-duration="800">
+                <div class="card-body text-center">
+                    <div class="icon mb-3">
+                        <i class="fas fa-briefcase fa-3x text-warning"></i> <!-- Add Font Awesome icon for job -->
+                    </div>
+                    <h5 class="card-title text-warning">Junior Developer</h5> <!-- Position -->
+                    <p class="card-text text-muted" style="text-align: justify;">
+                        Company: Viser Solution<br> <!-- Company -->
+                        Duration: Nov 2023 - Jun 2024<br> <!-- Dates -->
+                    • Developed RESTful APIs using Django Rest Framework for a logistics project, facilitating seamless communication and data exchange between client-side applications and server-side  <br>
+                    • Implemented features for efficient management of logistics operations, ensuring scalability and robustness in handling diverse transportation tasks
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
